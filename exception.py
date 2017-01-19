@@ -2,15 +2,19 @@
 
 
 class ignore:
-    def __init__(self, *exceptions):
+    def __init__(self, *exceptions, error_message=None):
         self._exceptions = exceptions
+        self.error_message = error_message
 
     def __enter__(self):
         """
         When execute `with ignore(Exception)`
         Override, And Do anything!
         """
-        pass
+        if self.error_message is None:
+            pass
+        else:
+            print(self.error_message)
 
     def __exit__(self, exception_type, *_):
         """
