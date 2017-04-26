@@ -7,10 +7,7 @@ def remove_dup(data):
 
 
 def is_iterable(data):
-    if type(data) != str and hasattr(data, '__iter__'):
-        return True
-    else:
-        return False
+    return type(data) != str and hasattr(data, '__iter__')
 
 
 def return2type(type2change):
