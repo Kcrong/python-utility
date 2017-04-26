@@ -11,9 +11,7 @@ class ignore:
         When execute `with ignore(Exception)`
         Override, And Do anything!
         """
-        if self.error_message is None:
-            pass
-        else:
+        if self.error_message is not None:
             print(self.error_message)
 
     def __exit__(self, exception_type, *_):
